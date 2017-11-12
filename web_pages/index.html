@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Online Actuator Control</title>
+    <link rel="stylesheet" href="vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="custom/style.css">
+    <link rel="stylesheet" href="custom/global.css">
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar navbar-inverse no-radius">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button class="navbar-brand" style="background-color: inherit; border: 0;" onclick="destroyCred()">
+                        <img alt="X" src="">
+                    </button>
+                </div>
+            <p class="navbar-text">Online Actuator Control</p>
+            <button type="button" id="changeCred" class="btn btn-danger navbar-btn no-radius">Change Credential</button>
+        </nav>
+        <div id="scp" class="panel panel-success no-radius" hidden>
+            <div class="panel-heading no-radius">
+                <h3 class="panel-title">Status and Control!</h3>
+            </div>
+            <div class="panel-body">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Address</th>
+                            <th>Status</th>
+                            <th>Control</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Actuator 01</td>
+                            <td id="status01">N/A</td>
+                            <td>
+                                <div class="btn-group" role="group" aria-label="...">
+                                    <button type="button" class="btn btn-success no-radius" onclick="setActuator('01', '0')">OFF</button>
+                                    <button type="button" class="btn btn-info no-radius" onclick="setActuator('01', '1')">&nbsp;ON&nbsp;</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Actuator 02</td>
+                            <td id="status02">N/A</td>
+                            <td>
+                                <div class="btn-group" role="group" aria-label="...">
+                                    <button type="button" class="btn btn-success no-radius" onclick="setActuator('02', '0')">OFF</button>
+                                    <button type="button" class="btn btn-info no-radius" onclick="setActuator('02', '1')">&nbsp;ON&nbsp;</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Actuator 03</td>
+                            <td id="status03">N/A</td>
+                            <td>
+                                <div class="btn-group" role="group" aria-label="...">
+                                    <button type="button" class="btn btn-success no-radius" onclick="setActuator('03', '0')">OFF</button>
+                                    <button type="button" class="btn btn-info no-radius" onclick="setActuator('03', '1')">&nbsp;ON&nbsp;</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Actuator 04</td>
+                            <td  id="status04">N/A</td>
+                            <td>
+                                <div class="btn-group" role="group" aria-label="...">
+                                    <button type="button" class="btn btn-success no-radius" onclick="setActuator('04', '0')">OFF</button>
+                                    <button type="button" class="btn btn-info no-radius" onclick="setActuator('04', '1')">&nbsp;ON&nbsp;</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Actuator 05</td>
+                            <td id="status05">N/A</td>
+                            <td>
+                                <div class="btn-group" role="group" aria-label="...">
+                                    <button type="button" class="btn btn-success no-radius" onclick="setActuator('05', '0')">OFF</button>
+                                    <button type="button" class="btn btn-info no-radius" onclick="setActuator('05', '1')">&nbsp;ON&nbsp;</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Actuator 06</td>
+                            <td  id="status06">N/A</td>
+                            <td>
+                                <div class="btn-group" role="group" aria-label="...">
+                                    <button type="button" class="btn btn-success no-radius" onclick="setActuator('06', '0')">OFF</button>
+                                    <button type="button" class="btn btn-info no-radius" onclick="setActuator('06', '1')">&nbsp;ON&nbsp;</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Actuator 07</td>
+                            <td id="status07">N/A</td>
+                            <td>
+                                <div class="btn-group" role="group" aria-label="...">
+                                    <button type="button" class="btn btn-success no-radius" onclick="setActuator('07', '0')">OFF</button>
+                                    <button type="button" class="btn btn-info no-radius" onclick="setActuator('07', '1')">&nbsp;ON&nbsp;</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Actuator 08</td>
+                            <td id="status08">N/A</td>
+                            <td>
+                                <div class="btn-group" role="group" aria-label="...">
+                                    <button type="button" class="btn btn-success no-radius" onclick="setActuator('08', '0')">OFF</button>
+                                    <button type="button" class="btn btn-info no-radius" onclick="setActuator('08', '1')">&nbsp;ON&nbsp;</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Actuator 09</td>
+                            <td id="status09">N/A</td>
+                            <td>
+                                <div class="btn-group" role="group" aria-label="...">
+                                    <button type="button" class="btn btn-success no-radius" onclick="setActuator('09', '0')">OFF</button>
+                                    <button type="button" class="btn btn-info no-radius" onclick="setActuator('09', '1')">&nbsp;ON&nbsp;</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Actuator 10</td>
+                            <td id="status10">N/A</td>
+                            <td>
+                                <div class="btn-group" role="group" aria-label="...">
+                                    <button type="button" class="btn btn-success no-radius" onclick="setActuator('10', '0')">OFF</button>
+                                    <button type="button" class="btn btn-info no-radius" onclick="setActuator('10', '1')">&nbsp;ON&nbsp;</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div id="cred" class="panel panel-danger no-radius" hidden>
+            <div class="panel-heading no-radius">
+                <h3 class="panel-title">Enter Your Credential!</h3>
+            </div>
+            <div class="panel-body">
+                    <div id="icred" class="alert alert-warning" role="alert" hidden>
+                        Incorrect Credential!
+                    </div>
+                <div class="input-group">
+                    <input type="password" id="credential" class="form-control no-radius" placeholder="Credential">
+                    <span class="input-group-btn">
+                        <button class="btn btn-danger no-radius" type="button" onclick="setCredential()">Try!</button>
+                    </span>
+                </div>
+                
+            </div>
+        </div>
+        <div>
+            &copy; 2017 Sincos Automation Technologies Limited.
+        </div>
+    </div>
+
+</body>
+<script src="vendor/jquery-3.2.1.min.js"></script>
+<script src="custom/system.js"></script>
+
+</html>
